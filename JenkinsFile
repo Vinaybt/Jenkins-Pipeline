@@ -21,10 +21,9 @@ pipeline {
                 sh 'make clean'
             }
         }
-    }
-    Post {
-        Success {
-            archiveArtifacts artifacts: '**/app', fingerprint: true
+        stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts artifacts: '**/app', fingerprint: true
         }
     }
 }
