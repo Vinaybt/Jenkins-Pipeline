@@ -24,6 +24,7 @@ pipeline {
         stage('Archive Artifacts') {
             steps {
                 archiveArtifacts artifacts: '**/app', fingerprint: true
+            }
         }
     }
 }
