@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/Vinaybt/Jenkins-Pipeline.git'
+                git branch: 'main', url: 'https://github.com/Vinaybt/Jenkins-Pipeline.git'
             }
         }
         stage('Build C++ App') {
