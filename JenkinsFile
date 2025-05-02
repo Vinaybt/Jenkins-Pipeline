@@ -6,14 +6,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Vinaybt/Jenkins-Pipeline.git'
             }
         }
-        stage('Install Build Tools') {
-            steps {
-                sh '''
-                    apt-get update
-                    apt-get install -y build-essential
-                '''
-            }
-        }
         stage('Build C++ App') {
             steps {
                 sh 'make'
