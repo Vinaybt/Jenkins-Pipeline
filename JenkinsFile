@@ -1,14 +1,17 @@
 pipeline {
-    agent {
-        label {
-            image 'gcc:latest'
-            args '-u root' // if you need permissions for install or chmod
-        }
-    }
+    agent any
     stages {
         stage('Clone Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/Vinaybt/Jenkins-Pipeline.git'
+            }
+        }
+        stage('Install Build Tools') {
+            steps {
+                sh '''
+                    sudo apt-get update
+                    sudo apt-get install -y build-essential
+                '''
             }
         }
         stage('Build C++ App') {
