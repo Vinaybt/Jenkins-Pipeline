@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/YOUR_USERNAME/cpp-ci-cd-lab.git'
+            }
+        }
+        stage('Build C++ App') {
+            steps {
+                sh 'make'
+            }
+        }
+        stage('Run App') {
+            steps {
+                sh './app'
+            }
+        }
+        stage('Clean Up') {
+            steps {
+                sh 'make clean'
+            }
+        }
+    }
+}
