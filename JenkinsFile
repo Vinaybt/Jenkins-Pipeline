@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build C++ App') {
             steps {
-                sh make
+                sh 'make'
             }
         }
         stage('Run App') {
