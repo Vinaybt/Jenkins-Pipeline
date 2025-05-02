@@ -22,4 +22,9 @@ pipeline {
             }
         }
     }
+    Post {
+        Success {
+            archiveArtifacts artifacts: '**/app', fingerprint: true
+        }
+    }
 }
