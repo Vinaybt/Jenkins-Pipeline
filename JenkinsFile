@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {
+        label {
             image 'gcc:latest'
             args '-u root' // if you need permissions for install or chmod
         }
