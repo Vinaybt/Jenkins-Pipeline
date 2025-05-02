@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Build C++ App') {
             steps {
+                sh chmod +x MakeFile
                 sh './MakeFile'
             }
         }
