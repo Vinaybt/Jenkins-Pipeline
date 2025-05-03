@@ -1,13 +1,10 @@
 pipeline {
     agent any
-<<<<<<< HEAD
 
     environment {
         BUILD_DIR = "build"
         APP_NAME = "app"
     }
-=======
->>>>>>> 150058cdcca0b15f8143e9d8e91794031042652e
     stages {
         stage('Clone Repository') {
             steps {
@@ -16,14 +13,10 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-<<<<<<< HEAD
                 sh '''
                     echo "[INFO] installing build tools..."
                     apt-get update && apt-get install -y build-essential
                 '''
-=======
-                git branch: 'main', url: 'https://github.com/Vinaybt/Jenkins-Pipeline.git'
->>>>>>> 150058cdcca0b15f8143e9d8e91794031042652e
             }
         }
         stage('Build Application') {
