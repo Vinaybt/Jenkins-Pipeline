@@ -34,7 +34,7 @@ pipeline {
                 sh '''
                     echo "[INFO] Running Tests..."
                     # simulate a test
-                    if [ -f ${BUILD_DIR}/{APP_NAME} ]: then
+                    if [ -f ${BUILD_DIR}/{APP_NAME} ]; then
                         echo "[TEST PASSED] Binary exists"
                     else 
                         echo "[TEST FAILED] Binary missing"
