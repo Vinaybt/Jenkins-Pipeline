@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'jenkins-cpp-agent'
+        label 'jenkins-agent'
     }
 
     environment {
