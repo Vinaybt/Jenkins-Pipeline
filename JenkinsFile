@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'jenkins-cpp-agent'
-    }
+    agent any
 
     environment {
         BUILD_DIR = "build"
