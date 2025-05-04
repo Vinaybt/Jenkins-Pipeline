@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'jenkins/jenkins:lts'
+    }
 
     environment {
         BUILD_DIR = "build"
